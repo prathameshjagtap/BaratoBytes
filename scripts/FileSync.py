@@ -27,7 +27,8 @@ class FileSyncClient:
             for newdir in dirnames:
                 dir_files_list.extend(self.get_new_local_files(existing_file_list, join(dirpath, newdir)))
             break
-        existing_files_absolute_path = (join(self.user_account.local_directory, x) for x in existing_file_list)
+        existing_files_absolute_path = []
+        existing_files_absolute_path.extend(join(self.user_account.local_directory, x) for x in existing_file_list)
         new_local_files = [item for item in dir_files_list if item not in existing_files_absolute_path]
         return new_local_files
 
