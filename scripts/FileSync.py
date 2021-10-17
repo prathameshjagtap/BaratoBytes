@@ -8,7 +8,6 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 
-
 class FileSyncClient:
 
     def __init__(self, user_account: UserAccount):
